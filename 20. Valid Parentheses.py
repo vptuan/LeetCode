@@ -13,6 +13,6 @@ class Solution(object):
         for ch in s:
             if ch in "({[":
                 stack.append(ch)
-            elif not stack or stack.pop() != pairs[ch]:
+            elif len(stack)==0 or stack.pop() != pairs[ch]:
                 return False
-        return not stack
+        return len(stack)==0
