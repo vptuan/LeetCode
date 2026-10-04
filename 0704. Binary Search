@@ -1,0 +1,22 @@
+class Solution(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        lower = 0
+        upper = len(nums)-1
+        #mid = (target-nums[lower]/nums[upper]-nums[lower])*(upper-lower)        
+        while lower<=upper:
+            est = (lower+upper)//2
+            if (nums[est] == target):
+                return est
+            elif nums[est] < target:
+                lower = est+1
+            else:
+                upper = est-1
+        return -1
+
+        
+        
